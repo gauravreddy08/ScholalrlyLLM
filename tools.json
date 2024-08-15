@@ -1,0 +1,19 @@
+[
+    {
+        "type": "function",
+        "function": {
+            "name": "knowledge_retriever",
+            "description": "A function designed to retrieve specific information from the database of individual's research publications. This function is used to gather details such as publication titles, URLs, dates, and abstracts based on the query.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "query": {
+                        "type": "string",
+                        "description": "The specific search query or keywords used to retrieve relevant information from the publication database. This could include search terms like the year of publication, topic, or the title of a specific research paper."
+                        }
+                    },
+                "required": ["query"]
+            }
+        }
+    }
+]
