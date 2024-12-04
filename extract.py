@@ -50,10 +50,25 @@ def extract(url):
             continue
         titles.add(publication['Title'])
 
-        publication['Publication Date'] = result['publication_date']
-        publication['Authors'] = result['authors']
-        publication['Abstract'] = result['description']
-        publication['URL Link'] = result['link']
+        try:
+            publication['Publication Date'] = result['publication_date']
+        except KeyError:
+            pass
+
+        try:
+            publication['Authors'] = result['authors']
+        except KeyError:
+            pass
+
+        try:
+            publication['Abstract'] = result['description']
+        except KeyError:
+            pass
+
+        try:
+            publication['URL Link'] = result['link']
+        except KeyError:
+            pass
 
         publications.append(publication)
 

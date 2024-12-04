@@ -25,7 +25,7 @@ class RAG():
         self.db = FAISS.from_documents(documents=docs, embedding=self.embeddings)
 
     def retrieve(self, query, k=10):
-        docs = self.db.similarity_search(query=query, k=10)
+        docs = self.db.similarity_search(query=query, k=5)
         
         if docs:
             return "\n".join(doc.page_content for doc in docs)
